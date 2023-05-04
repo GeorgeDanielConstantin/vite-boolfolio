@@ -3,6 +3,10 @@ export default {
   data() {
     return {};
   },
+
+  props: {
+    title: String,
+  },
 };
 </script>
 
@@ -24,13 +28,29 @@ export default {
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <li class="nav-item d-flex">
+              <router-link
+                :to="{ name: 'Homepage' }"
+                class="nav-link"
+                aria-current="page"
+                href="#"
+              >
+                Home
+              </router-link>
+              <router-link
+                :to="{ name: 'Contacts' }"
+                class="nav-link"
+                aria-current="page"
+                href="#"
+              >
+                Contacts
+              </router-link>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+    <h1 class="text-center mt-5">{{ title }}</h1>
   </header>
 </template>
 
